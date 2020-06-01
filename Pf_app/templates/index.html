@@ -1,0 +1,28 @@
+{% load static %}
+<!-- Index page for user to search the pincode
+     Just a simple page with with a search box and a search button-->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    {% block body %}
+  	<h1 class="heading">ZipCode Finder</h1>
+    <div class="s130">
+      <form method="POST">
+        {% csrf_token %}
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <input id="search" type="text" placeholder="Search Pincode here..." name="pin"/>
+          </div>
+          <div class="input-field second-wrap">
+            <button class="btn-search" type="button" value="ok">SEARCH</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    {% endblock %}
+ </body>
+</html>
